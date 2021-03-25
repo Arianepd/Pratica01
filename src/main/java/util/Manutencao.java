@@ -1,0 +1,51 @@
+package util;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Manutencao
+ */
+@WebServlet("/Manutencao")
+public class Manutencao extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+
+		String text = "";
+		text += "<html>";
+		text += "<head>";
+		text += "<meta charset=\"ISO-8859-1\">";
+		text += "<title>Pagina em Manutenção</title>";
+		text += "</head>";
+		text += "<body>";
+		text += "<P><P>";
+		text += "<h1 style=\"background-color: pink\">Desculpem-nos!<P> Estamos em Manutenção!!!</h1>" + "</body>\r\n"
+				+ "</html>";
+
+		out.println(text);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
